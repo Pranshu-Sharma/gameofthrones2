@@ -1,0 +1,47 @@
+<div class="container">
+       
+    <a [routerLink]="['/home']"><img src="../../assets/got.png" alt="" style="width:80vw"></a> 
+
+</div> 
+
+<div class="container">
+ 
+     <div class="row" >
+            
+
+        <div *ngFor="let name of allDetails " class="col-md-4">
+
+            <div *ngIf="name.gender" class="card text-center character" id="character">
+             
+                  <div><h4>{{name.name }}</h4></div>
+                  <div>Gender : {{name.gender}}</div>
+                  <div *ngIf="name.aliases!=''">Aliases : {{name.aliases}}</div>
+                  <div *ngIf="name.culture!=''">Culture : {{name.culture}}</div>
+                  <div *ngIf="name.born!=''">Born : {{name.born}}</div>
+                  <a [routerLink]="['/characters',name.url.split('characters/').pop()]" href=""><button>Details</button></a>
+              
+            </div>  
+            
+            <div *ngIf="name.isbn" class="card text-center book" >
+                <div><h4>{{name.name }}</h4></div>
+                <div *ngIf="name.isbn!=''">ISBN : {{name.isbn}}</div>
+                <div *ngIf="name.authors!=''">Authors : {{name.authors}}</div>
+                <div *ngIf="name.numberOfPages!=''">Number Of Pages : {{name.numberOfPages}}</div>
+                <div *ngIf="name.mediaType!=''">Media Type : {{name.mediaType}}</div>
+                <a [routerLink]="['/books',name.url.split('books/').pop()]" href=""><button>Details</button></a>
+            </div> 
+  
+            <div *ngIf="name.region" class="card text-center house" >
+                <div><h4>{{name.name}}</h4></div>
+                <div *ngIf="name.coatOfArms!=''">Coat of Arms : {{name.coatOfArms}}</div>
+                <div *ngIf="name.region!=''">Region : {{name.region}}</div>
+                <div *ngIf="name.words!=''">Words : {{name.words}}</div>
+                <a [routerLink]="['/houses',name.url.split('houses/').pop()]" href=""><button>Details</button></a>
+            </div> 
+            
+
+          </div>      
+
+     </div>
+          
+</div>

@@ -1,0 +1,30 @@
+<div class="container">
+    <div *ngIf="bookDetails">
+   
+            <div class="card">
+              <div class="card-body text-center">
+                <span class="card-text ">
+                  <h1>{{bookDetails.name}}</h1><br>
+                  <div style="border-top:1px solid grey;padding: 15px" *ngIf="bookDetails.isbn!=''"><b>ISBN :</b> {{bookDetails.isbn}}</div>
+                  <div style="border-top:1px solid grey ;padding: 15px" *ngIf="bookDetails.authors!=''"><b>Authors :</b> {{bookDetails.authors}}</div>
+                  <div style="border-top:1px solid grey ;padding: 15px" *ngIf="bookDetails.numberOfPages!=''"><b>Number of Pages :</b> {{bookDetails.numberOfPages}}</div>
+                  <div style="border-top:1px solid grey ;padding: 15px" *ngIf="bookDetails.publisher!=''"><b>Publisher:</b> {{bookDetails.publisher}}</div>
+                  <div style="border-top:1px solid grey ;padding: 15px" *ngIf="bookDetails.country!=''"><b>Country :</b> {{bookDetails.country}}</div>
+                  <div style="border-top:1px solid grey ;padding: 15px" *ngIf="bookDetails.mediaType!=''"><b>Media Type :</b> {{bookDetails.mediaType}}</div>
+                  <div style="border-top:1px solid grey ;padding: 15px" *ngIf="bookDetails.released!=''"><b>Released :</b> {{bookDetails.released | date}}</div>
+                  <div style="border-top:1px solid grey ;padding: 15px" *ngIf="bookDetails.characters!=''">
+                      <b>Characters : </b><span *ngFor="let i of bookDetails.characters"><a [routerLink]="['/characters',i.split('characters/').pop()]">{{i}}</a><br></span>
+                  </div>
+                  <div style="border-top:1px solid grey ;padding: 15px" *ngIf="bookDetails.povCharacters!=''">
+                      <b>Pov Characters : </b><span *ngFor="let j of bookDetails.povCharacters"><a [routerLink]="['/characters',j.split('characters/').pop()]">{{j}}</a><br></span>
+                  </div>
+                  <a [routerLink]="['/home']"><button><b>Home</b></button></a>
+                </span>
+              </div>
+            </div>
+      
+    </div>
+  </div>
+  
+  
+  

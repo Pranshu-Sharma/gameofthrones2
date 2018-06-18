@@ -1,0 +1,38 @@
+
+.card{
+    margin: 15px 5px;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid white;
+    -webkit-box-shadow: -1px 1px 21px 1px rgba(0,0,0,0.21); 
+box-shadow: -1px 1px 21px 1px rgba(0,0,0,0.21);
+}
+
+h4{
+    margin-bottom: 5px;
+}
+
+button{
+    margin: 10px;
+    background-color: white;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.character{
+    background-image: url("../../assets/character.png");
+    color: white;
+}
+
+.book{
+    background-image: url("../../assets/book.png");
+    color: white;
+}
+
+.house{
+    background-image: url("../../assets/house.png");
+    color: white;
+}

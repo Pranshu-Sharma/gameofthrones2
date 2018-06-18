@@ -1,0 +1,41 @@
+<div class="container">
+    <div *ngIf="houseDetails">
+   
+            <div class="card">
+              <div class="card-body text-center">
+                <span class="card-text ">
+                <h1>{{houseDetails.name}}</h1><br>
+                <div style="border-top:1px solid grey;padding: 15px" *ngIf="houseDetails.region!=''"><b>Region :</b> {{houseDetails.region}}</div>
+                <div style="border-top:1px solid grey ;padding: 15px" *ngIf="houseDetails.coatOfArms!=''"><b>Coat of Arms :</b> {{houseDetails.coatOfArms}}</div>
+                <div style="border-top:1px solid grey ;padding: 15px" *ngIf="houseDetails.words!=''"><b>Words :</b> {{houseDetails.words}}</div>
+                <div style="border-top:1px solid grey ;padding: 15px" *ngIf="houseDetails.seats!=''"><b>Seats :</b> {{houseDetails.seats}}</div>
+                <div style="border-top:1px solid grey ;padding: 15px" *ngIf="houseDetails.titles!=''"><b>Titles :</b> {{houseDetails.titles}}</div>
+                <div style="border-top:1px solid grey ;padding: 15px" *ngIf="houseDetails.currentLord!=''">
+                    <b>Current Lord : </b> <a [routerLink]="['/characters',houseDetails.currentLord.split('characters/').pop()]">{{houseDetails.currentLord}}</a>
+                </div>
+                <div style="border-top:1px solid grey ;padding: 15px" *ngIf="houseDetails.heir!=''">
+                    <b>Heir : </b> <a [routerLink]="['/characters',houseDetails.heir.split('characters/').pop()]">{{houseDetails.heir}}</a>
+                </div>
+                <div style="border-top:1px solid grey ;padding: 15px" *ngIf="houseDetails.overlord!=''">
+                    <b>Overlord : </b> <a [routerLink]="['/houses',houseDetails.overlord.split('houses/').pop()]">{{houseDetails.overlord}}</a>
+                </div>
+                <div style="border-top:1px solid grey ;padding: 15px" *ngIf="houseDetails.founded!=''"><b>Founded :</b> {{houseDetails.founded}}</div>
+                <div style="border-top:1px solid grey ;padding: 15px" *ngIf="houseDetails.founder!=''">
+                    <b>Founder : </b> <a [routerLink]="['/characters',houseDetails.founder.split('characters/').pop()]">{{houseDetails.founder}}</a>
+                </div>
+                <div style="border-top:1px solid grey ;padding: 15px" *ngIf="houseDetails.diedOut!=''"><b>Died Out :</b> {{houseDetails.diedOut}}</div>
+                <div style="border-top:1px solid grey ;padding: 15px" *ngIf="houseDetails.ancestralWeapons!=''"><b>Ancestral Weapons :</b> {{houseDetails.ancestralWeapons}}</div>
+                <div style="border-top:1px solid grey ;padding: 15px" *ngIf="houseDetails.cadetBranches!=''"><b>Cadet Branches :</b> {{houseDetails.cadetBranches}}</div>
+                <div style="border-top:1px solid grey ;padding: 15px" *ngIf="houseDetails.swornMembers!=''">
+                    <b>Sworn Members : </b> <span *ngFor="let i of houseDetails.swornMembers"><a [routerLink]="['/characters',i.split('characters/').pop()]">{{i}}</a><br></span>
+                </div>
+                <a [routerLink]="['/home']"><button><b>Home</b></button></a> 
+                </span>
+              </div>
+            </div>
+      
+    </div>
+  </div>
+  
+  
+  

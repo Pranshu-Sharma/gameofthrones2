@@ -1,0 +1,36 @@
+<div class="container">
+  <div *ngIf="characterDetails">
+ 
+          <div class="card">
+            <div class="card-body text-center">
+              <span class="card-text ">
+              <h1>{{characterDetails.name}}</h1><br>
+              <div style="border-top:1px solid grey;padding: 15px" *ngIf="characterDetails.gender!=''"><b>Gender :</b> {{characterDetails.gender}}</div>
+              <div style="border-top:1px solid grey ;padding: 15px" *ngIf="characterDetails.culture!=''"><b>Culture :</b> {{characterDetails.culture}}</div>
+              <div style="border-top:1px solid grey ;padding: 15px" *ngIf="characterDetails.born!=''"><b>Born :</b> {{characterDetails.born}}</div>
+              <div style="border-top:1px solid grey ;padding: 15px" *ngIf="characterDetails.died!=''"><b>Died :</b> {{characterDetails.died}}</div>
+              <div style="border-top:1px solid grey ;padding: 15px" *ngIf="characterDetails.titles!=''"><b>Titles :</b> {{characterDetails.titles}}</div>
+              <div style="border-top:1px solid grey ;padding: 15px" *ngIf="characterDetails.aliases!=''"><b>Aliases :</b> {{characterDetails.aliases}}</div>
+              <div style="border-top:1px solid grey ;padding: 15px" *ngIf="characterDetails.father!=''"><b>Father :</b> {{characterDetails.father}}</div>
+              <div style="border-top:1px solid grey ;padding: 15px" *ngIf="characterDetails.mother!=''"><b>Mother :</b> {{characterDetails.mother}}</div>
+              <div style="border-top:1px solid grey ;padding: 15px" *ngIf="characterDetails.spouse!=''"><b>Spouse :</b> {{characterDetails.spouse}}</div>
+              <div style="border-top:1px solid grey ;padding: 15px" *ngIf="characterDetails.allegiances!=''">
+                  <b>Allegiances : </b><span *ngFor="let a of characterDetails.allegiances"><a [routerLink]="['/houses',a.split('houses/').pop()]">{{a}}</a><br></span>
+              </div>
+              <div style="border-top:1px solid grey ;padding: 15px" *ngIf="characterDetails.books!=''">
+                  <b>Books : </b> <span *ngFor="let i of characterDetails.books"><a [routerLink]="['/books',i.split('books/').pop()]">{{i}}</a><br></span>
+              </div>
+              <div style="border-top:1px solid grey ;padding: 15px" *ngIf="characterDetails.povBooks!=''">
+                  <b>Pov Books : </b> <span *ngFor="let j of characterDetails.povBooks"><a [routerLink]="['/books',j.split('books/').pop()]">{{j}}</a><br></span>
+              </div>
+              <div style="border-top:1px solid grey ;padding: 15px" *ngIf="characterDetails.tvSeries!=''"><b>TV Series :</b> {{characterDetails.tvSeries}}</div>
+              <div style="border-top:1px solid grey ;padding: 15px" *ngIf="characterDetails.playedBy!=''"><b>Played By :</b> {{characterDetails.playedBy}}</div>
+              <a [routerLink]="['/home']"><button><b>Home</b></button></a> 
+            </span>
+            </div>
+          </div>
+    
+  </div>
+</div>
+
+
