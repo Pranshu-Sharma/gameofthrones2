@@ -29,21 +29,21 @@ export class HttpService {
 
   //  method to get characters
    public getCharacters(){   
-     let response1 = this._http.get(this.baseUrl+'/characters?page=1&pageSize=50');
+     let response1 = this._http.get(this.baseUrl+'/characters');
      console.log("response1 : "+response1);
      return response1;     
    }
 
   //  method to get houses
    public getHouses(){
-    let response2 = this._http.get(this.baseUrl+'/books?page=1&pageSize=50');
+    let response2 = this._http.get(this.baseUrl+'/books');
     console.log("response2 : "+response2);
     return response2;
    }
 
   //  method to get books
    public getBooks(){
-    let response3 = this._http.get(this.baseUrl+'/houses?page=1&pageSize=50');
+    let response3 = this._http.get(this.baseUrl+'/houses');
      console.log("response3 : "+response3);
       return response3;
    }
